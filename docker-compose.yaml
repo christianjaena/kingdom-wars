@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: kingdom-wars-postgres
+    environment:
+      POSTGRES_DB: kingdom_wars_db
+      POSTGRES_USER: kingdom_wars_admin
+      POSTGRES_PASSWORD: kingdom_wars_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
